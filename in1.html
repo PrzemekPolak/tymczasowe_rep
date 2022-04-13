@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="paragon" style="border: solid;width: 260px;text-align: center;padding: 20px;">
+            <h3 style="margin: 0px;">{{paragon.firma}}</h3>
+            <p style="margin: 0px;">{{paragon.ulica}}<br>{{paragon.miasto}}<br>{{paragon.telefon}}</p>
+            <a :href="paragon.link">http://www.unikpol.pl</a>
+        </div>
+
+        <div id="todolist">
+            <div>DO WYKONANIA:</div>
+            <ol style="margin: 0px; padding-left: 15px;">
+                <li v-for="todo in todolist">
+                    {{todo.do}}
+                </li>
+            </ol>
+        </div>
+
+        <button @click="addcount()">Liczba naciśnięć: {{counter}}</button>
+
+        <div id="formularz">
+            <form>
+                <label>Tytuł:</label>
+                <input type="text" v-model="book.title">
+                <label>Imię:</label>
+                <input type="text" v-model="book.name">
+                <label>Nazwisko:</label>
+                <input type="text" v-model="book.surname">
+                <button @click="formsub()">Zapisz</button>
+            </form>
+        </div>
+
+    </div>
+    <script src="mjs.js"></script>
+    <script>
+        const mountedApp = ap.mount('#app')
+    </script>
+</body>
+</html>
